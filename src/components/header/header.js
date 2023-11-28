@@ -8,6 +8,17 @@ import MobileDrawer from "./mobile-drawer";
 import menuItems from "./header.data";
 
 export default function Header({ className }) {
+
+  const onButtonClick = () => {
+    const pdfUrl = "resume-madi-abzhanov.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "resume-madi.pdf"; // specify the filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
+
   return (
     <header sx={styles.header} className={className} id="header">
       <Container sx={styles.container}>
@@ -28,15 +39,16 @@ export default function Header({ className }) {
           ))}
         </Flex>
 
-        <a href="https://drive.google.com/file/d/1A64blTiKDggmke2v68xaPm9O8Anj6Tlz/view?usp=sharing">
+
           <Button
             className="donate__btn"
             variant="secondary"
             aria-label="Download CV"
+            onClick={onButtonClick}
           >
             Download CV
           </Button>
-        </a>
+
         <MobileDrawer />
       </Container>
     </header>
