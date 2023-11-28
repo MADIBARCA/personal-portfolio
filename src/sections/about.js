@@ -32,8 +32,8 @@ const data = [
   {
     id: 4,
     imgSrc: Subscription,
-    altText: "Angular JS",
-    title: "Angular JS",
+    altText: "React JS",
+    title: "React JS",
   },
   {
     id: 5,
